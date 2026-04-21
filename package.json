@@ -1,0 +1,36 @@
+{
+  "name": "rivemcp",
+  "version": "1.0.4",
+  "description": "MCP server for programmatically creating and editing Rive (.riv) animation files",
+  "mcpName": "io.github.paradoxsyn/rivemcp",
+  "bin": {
+    "rivemcp": "bin/rivemcp.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "files": [
+    "bin/",
+    "scripts/",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "rive",
+    "mcp",
+    "animation",
+    "motion-design",
+    "llm",
+    "model-context-protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paradoxsyn/rivemcp-releases"
+  },
+  "homepage": "https://rivemcp.stunning.gg",
+  "engines": {
+    "node": ">=18"
+  }
+}

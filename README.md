@@ -8,9 +8,48 @@ RiveMCP exposes **139 MCP tools** that let any AI assistant (Claude, GPT, etc.) 
 
 ## Quick Start
 
-### 1. Download the binary
+### Install via npm (recommended)
 
-Grab the latest binary for your platform from [Releases](https://github.com/paradoxsyn/rivemcp-releases/releases):
+```bash
+npm install -g rivemcp
+```
+
+This automatically downloads the correct binary for your platform. No Node.js runtime needed at execution time.
+
+### Configure your AI client
+
+**Claude Desktop** (`claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "rivemcp": {
+      "command": "npx",
+      "args": ["-y", "rivemcp"]
+    }
+  }
+}
+```
+
+**Claude Code:**
+```bash
+claude mcp add rivemcp -- npx -y rivemcp
+```
+
+**Cursor / VS Code (settings.json):**
+```json
+{
+  "mcp.servers": {
+    "rivemcp": {
+      "command": "npx",
+      "args": ["-y", "rivemcp"]
+    }
+  }
+}
+```
+
+### Manual install (alternative)
+
+Download the binary for your platform from [Releases](https://github.com/paradoxsyn/rivemcp-releases/releases):
 
 | Platform | Binary |
 |----------|--------|
@@ -19,44 +58,13 @@ Grab the latest binary for your platform from [Releases](https://github.com/para
 | macOS Intel | `rivemcp-macos-x64` |
 | macOS Apple Silicon | `rivemcp-macos-arm64` |
 
-### 2. Make it executable (macOS/Linux)
-
 ```bash
 chmod +x rivemcp-macos-arm64
 # macOS only — remove quarantine:
 xattr -d com.apple.quarantine rivemcp-macos-arm64
 ```
 
-### 3. Configure your AI client
-
-Add RiveMCP to your MCP client configuration.
-
-**Claude Desktop** (`claude_desktop_config.json`):
-```json
-{
-  "mcpServers": {
-    "rivemcp": {
-      "command": "/path/to/rivemcp-macos-arm64"
-    }
-  }
-}
-```
-
-**Claude Code:**
-```bash
-claude mcp add rivemcp /path/to/rivemcp-macos-arm64
-```
-
-**Cursor / VS Code (settings.json):**
-```json
-{
-  "mcp.servers": {
-    "rivemcp": {
-      "command": "/path/to/rivemcp-macos-arm64"
-    }
-  }
-}
-```
+Then point your MCP client at the binary path directly.
 
 ### 4. Start creating
 
