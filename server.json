@@ -1,0 +1,22 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schema/server.json",
+  "name": "io.github.paradoxsyn/rivemcp",
+  "description": "MCP server for programmatically creating and editing Rive (.riv) animation files. 139 tools for shapes, styling, animation, state machines, physics, prefabs, data binding, and more.",
+  "repository": "https://github.com/paradoxsyn/rivemcp-releases",
+  "homepage": "https://rivemcp.stunning.gg",
+  "version": "1.0.4",
+  "packages": [
+    {
+      "registry_name": "npm",
+      "name": "rivemcp",
+      "version": "1.0.4",
+      "runtime": "node",
+      "transport": [
+        {
+          "type": "stdio"
+        }
+      ]
+    }
+  ],
+  "remotes": []
+}
