@@ -16,7 +16,7 @@ renders it with Rive's own runtime to check it, and reports every decision a con
 - **Pipelines for real art** — sprite sheet → flipbook, one image → rigged character, still image →
   procedural smoke/fire/glow, physics baked into keyframes.
 
-191 MCP tools, grouped into tiers so an assistant sees the common ones first; `enable_tools` switches on
+193 MCP tools, grouped into tiers so an assistant sees the common ones first; `enable_tools` switches on
 the rest for a session.
 
 ### Format support
