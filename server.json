@@ -1,22 +1,30 @@
 {
-  "$schema": "https://registry.modelcontextprotocol.io/schema/server.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.paradoxsyn/rivemcp",
-  "description": "MCP server for programmatically creating and editing Rive (.riv) animation files. 139 tools for shapes, styling, animation, state machines, physics, prefabs, data binding, and more.",
-  "repository": "https://github.com/paradoxsyn/rivemcp-releases",
-  "homepage": "https://rivemcp.stunning.gg",
-  "version": "1.0.4",
+  "title": "Polymation",
+  "description": "Author Rive (.riv/.rev) and convert Lottie, After Effects, Figma and Spline into it, offline.",
+  "repository": {
+    "url": "https://github.com/paradoxsyn/rivemcp-releases",
+    "source": "github"
+  },
+  "websiteUrl": "https://polymation.stunning.gg",
+  "version": "1.14.2",
   "packages": [
     {
-      "registry_name": "npm",
-      "name": "rivemcp",
-      "version": "1.0.4",
-      "runtime": "node",
-      "transport": [
+      "registryType": "npm",
+      "identifier": "rivemcp",
+      "version": "1.14.2",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
         {
-          "type": "stdio"
+          "name": "POLYMATION_LICENSE_KEY",
+          "description": "Licence key from polymation.stunning.gg. Optional: without one, the trial allowance applies.",
+          "isRequired": false,
+          "isSecret": true
         }
       ]
     }
-  ],
-  "remotes": []
+  ]
 }
