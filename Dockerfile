@@ -6,6 +6,6 @@
 # key in POLYMATION_LICENSE_KEY.
 FROM node:22-slim
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
-ARG POLYMATION_VERSION=1.14.2
+ARG POLYMATION_VERSION=1.15.0
 RUN npm install -g rivemcp@${POLYMATION_VERSION}
 ENTRYPOINT ["rivemcp"]
