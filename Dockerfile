@@ -6,6 +6,9 @@
 # key in POLYMATION_LICENSE_KEY.
 FROM node:22-slim
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
-ARG POLYMATION_VERSION=1.15.0
+ARG POLYMATION_VERSION=1.16.0
 RUN npm install -g rivemcp@${POLYMATION_VERSION}
+# The server lists two tools by default (find_tool / use_tool) and searches the rest; a registry
+# that indexes and grades the tool list needs to see every tool, so this image lists them all.
+ENV POLYMATION_TOOLS=full
 ENTRYPOINT ["rivemcp"]
