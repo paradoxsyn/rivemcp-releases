@@ -16,7 +16,7 @@ renders it with Rive's own runtime to check it, and reports every decision a con
 - **Pipelines for real art** — sprite sheet → flipbook, one image → rigged character, still image →
   procedural smoke/fire/glow, physics baked into keyframes.
 
-200 MCP tools, reached through two: `find_tool` finds the one for a job and `use_tool` runs it, so an
+205 MCP tools, reached through two: `find_tool` finds the one for a job and `use_tool` runs it, so an
 assistant carries about 2,400 tokens of tool definitions per message instead of 50,000+. A third,
 `report_problem`, sends the team a problem report — only one you have seen and agreed to send.
 
