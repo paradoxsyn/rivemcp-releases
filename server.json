@@ -2,18 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.paradoxsyn/rivemcp",
   "title": "Polymation",
-  "description": "Author Rive (.riv/.rev) and convert Lottie, After Effects, Figma and Spline into it, offline.",
+  "description": "Author Rive; convert Lottie, After Effects, Animate and Figma into it; animate AI and pixel art.",
   "repository": {
     "url": "https://github.com/paradoxsyn/rivemcp-releases",
     "source": "github"
   },
   "websiteUrl": "https://polymation.stunning.gg",
-  "version": "1.17.1",
+  "version": "1.18.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "rivemcp",
-      "version": "1.17.1",
+      "version": "1.18.0",
       "transport": {
         "type": "stdio"
       },

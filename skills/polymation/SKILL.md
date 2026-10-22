@@ -29,9 +29,29 @@ with its settings inside `arguments`. `report_problem` is the third (below).
 Every tool is reachable this way, so look before deciding something does not exist. `get_workflow`
 (run through `use_tool`) returns step-by-step recipes for the common jobs.
 
+Six more skills in this repository walk through one job each, step by step:
+- `lottie-to-rive`: Lottie, After Effects, Animate and Figma into Rive.
+- `fix-ai-pixel-art`: an image model's pixel art onto a real grid.
+- `video-to-sprite-sheet`: a video clip or a sprite sheet into clean frames, a sheet and a flipbook.
+- `pixel-character-animation`: a pixel character rigged and animated, with outfits.
+- `rive-state-machines`: interactive Rive, state machines and data binding.
+- `rig-character-from-image`: a picture or PSD into a rigged character.
+
+Install one with `npx skills add paradoxsyn/rivemcp-releases --skill <name>`.
+
 For character animation, the art comes from the user's own image or video model — Polymation calls
 no model itself. `sprite_art_brief` writes what to ask it; `video_to_sprite` turns a clip into a
 looping flipbook; `import_psd_layers` turns a layered PSD into parts for `assemble_character`.
+
+Pixel art is recognised and drawn crisp by itself, and the answers say when. A model's "pixel art"
+(uneven blocks, soft edges) goes through `snap_pixel_art` first. A pixel character is rigged by
+`pixel_autorig` and animated from a library (idle, walk, run, wave…) by `pixel_puppet_bake` or,
+posed and dressed at run time, `pixel_puppet_live`. For simpler motion, move pixel art in whole pixels:
+`split_image` moves part of a picture (its clothes ride along as `layers`), then
+`snap_motion_to_pixels` turns the motion into whole-pixel steps. For dress-up items and expressions,
+`sprite_art_brief` with mode `item` or `face`, then `extract_layer` takes the change out as a layer.
+`add_image_slot` lets the app swap a picture, and `export_web_player` writes a page that plays the
+real file.
 
 When no tool fits the job, or a tool fails in a way that looks like a bug, offer to tell the
 Polymation team with `report_problem`. Ask the user first: the first call only prepares the report
