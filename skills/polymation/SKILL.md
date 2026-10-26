@@ -29,15 +29,21 @@ with its settings inside `arguments`. `report_problem` is the third (below).
 Every tool is reachable this way, so look before deciding something does not exist. `get_workflow`
 (run through `use_tool`) returns step-by-step recipes for the common jobs.
 
-Six more skills in this repository walk through one job each, step by step:
+Seven more skills in this repository walk through one job each, step by step:
 - `lottie-to-rive`: Lottie, After Effects, Animate and Figma into Rive.
 - `fix-ai-pixel-art`: an image model's pixel art onto a real grid.
 - `video-to-sprite-sheet`: a video clip or a sprite sheet into clean frames, a sheet and a flipbook.
 - `pixel-character-animation`: a pixel character rigged and animated, with outfits.
 - `rive-state-machines`: interactive Rive, state machines and data binding.
 - `rig-character-from-image`: a picture or PSD into a rigged character.
+- `greybox-to-art`: a scene blocked out with shapes, painted by the user's image model, motion kept (2D), or filled with generated 3D models.
 
 Install one with `npx skills add paradoxsyn/rivemcp-releases --skill <name>`.
+
+With no art at all, block the scene out with named shapes and animate it (a greybox); then
+`greybox_brief` has the user's image model paint it, and `greybox_apply_art` puts the painting on the
+same objects with every keyframe and state machine kept. In 3D, `greybox_place_models` puts the
+user's generated models where the greybox had each thing.
 
 For character animation, the art comes from the user's own image or video model — Polymation calls
 no model itself. `sprite_art_brief` writes what to ask it; `video_to_sprite` turns a clip into a

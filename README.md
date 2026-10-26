@@ -19,12 +19,15 @@ renders it with Rive's own runtime to check it, and reports every decision a con
 - **Pixel art** — an image model's "pixel art" snapped onto a real grid; pixel characters rigged and
   animated from a library (idle, walk, run, wave, sit…) with outfits, expressions and body types,
   baked for every Rive runtime or posed and dressed live; always drawn crisp.
-- **Agent skills, one per job** — `npx skills add paradoxsyn/rivemcp-releases` offers seven:
+- **Art over a layout** — block a scene out with shapes and animate it; your own image model paints
+  it, and the painting goes back onto the same objects with the animation and interactions kept. In
+  3D, models from your image-to-3D generator are placed where the layout had each thing.
+- **Agent skills, one per job** — `npx skills add paradoxsyn/rivemcp-releases` offers eight:
   `polymation` (everything), `lottie-to-rive`, `fix-ai-pixel-art`, `video-to-sprite-sheet`,
-  `pixel-character-animation`, `rive-state-machines` and `rig-character-from-image`. Add
-  `--skill <name>` for one.
+  `pixel-character-animation`, `rive-state-machines`, `rig-character-from-image` and
+  `greybox-to-art`. Add `--skill <name>` for one.
 
-220 MCP tools, reached through two: `find_tool` finds the one for a job and `use_tool` runs it, so an
+224 MCP tools, reached through two: `find_tool` finds the one for a job and `use_tool` runs it, so an
 assistant carries about 2,400 tokens of tool definitions per message instead of 50,000+. A third,
 `report_problem`, sends the team a problem report — only one you have seen and agreed to send.
 
