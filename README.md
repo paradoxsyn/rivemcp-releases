@@ -27,7 +27,7 @@ renders it with Rive's own runtime to check it, and reports every decision a con
   `pixel-character-animation`, `rive-state-machines`, `rig-character-from-image` and
   `greybox-to-art`. Add `--skill <name>` for one.
 
-224 MCP tools, reached through two: `find_tool` finds the one for a job and `use_tool` runs it, so an
+226 MCP tools, reached through two: `find_tool` finds the one for a job and `use_tool` runs it, so an
 assistant carries about 2,400 tokens of tool definitions per message instead of 50,000+. A third,
 `report_problem`, sends the team a problem report — only one you have seen and agreed to send.
 

@@ -1,6 +1,6 @@
 ---
 name: rig-character-from-image
-description: Turns one character picture, a layered PSD or a parts sheet into a rigged 2D character in Rive. The picture is cut into parts along its own outlines, joints are placed and a bone skeleton built, meshes are added where parts bend, and it gets an idle animation. A set of walk frames can be fitted to one rig as bone keyframes instead of a flipbook. Use this skill when the user wants to rig or animate an AI-generated or hand-drawn character image, cut a character into body parts, turn a PSD into a Rive character, add bones and mesh deformation to an image, make a still character breathe or sway, or turn sprite frames into a skeletal animation.
+description: Turns one character picture, a layered PSD or a parts sheet into a rigged 2D character in Rive. The picture is cut into parts along its own outlines, joints are placed and a bone skeleton built, meshes are added where parts bend, and it gets an idle animation. A set of walk frames can be fitted to one rig as bone keyframes instead of a flipbook. Use this skill when the user wants to rig or animate an AI-generated or hand-drawn character image, cut a character into body parts, turn a PSD into a Rive character, add bones and mesh deformation to an image, make a still character breathe or sway, turn sprite frames into a skeletal animation, or animate a character they already rigged (in Rive, or as parts) with motion from a video — their own video model's, or any reference clip.
 license: Proprietary. LICENSE in the repository.
 compatibility: Needs the Polymation MCP server (`npx -y rivemcp`). Previews need Chrome, Edge or Playwright's Chromium.
 ---
@@ -57,6 +57,30 @@ draws the character's parts apart on one sheet. Then follow the brief's follow-u
 It cuts the rest frame and poses the rig to draw every frame, giving one file with bone keyframes.
 **Look at the fit sheet:** a frame the rig cannot draw needs a pivot, or should stay a flipbook (see
 the video-to-sprite-sheet skill).
+
+## Motion from a video, on a rig you already have
+
+The rig can be parts (a manifest from the routes above) or a character the user rigged in Rive: a
+`.riv`, or `"session"` for the rig open now (an SVG rigged with `rig_svg`, a loaded file). Bones, or
+a group per moving part; vector shapes, images, skinned paths. A Rive rig keeps its own bones: the
+result is the same file with new animations, still vector.
+
+1. `sprite_art_brief` with `mode: "video"`, `parts` (the manifest, the `.riv` or `"session"`),
+   `motion`, and `moves` for one-shot moves. It writes `guide.png`: the rig's own parts at rest, each
+   one flat colour, on green. Show the user the brief.
+   - Motion from any footage (the user filmed themselves, a clip they like): add `reference` with the
+     clip's path. The brief is then for a motion-transfer video tool, which copies the clip's motion
+     onto the guide. Nothing here detects poses.
+2. The user's video model animates `guide.png` as the brief says, one clip per motion.
+3. Run the brief's follow-up calls: `video_to_sprite` per clip, then `frames_to_rig` with the `rig`,
+   `guide: true` and the frames. Each part is found by its colour, so a near leg is never read as the
+   far one. It reports progress per frame; a 24-frame clip on a 14-bone rig takes about a minute and
+   a half.
+4. **Look at the fit sheet**, each frame beside the rig posed to draw it, then `review_motion`.
+
+Parts only turn at their joints: a limb that bends, foreshortens or turns toward the camera cannot be
+drawn that way, and the fit sheet shows where. An IK chain on the rig would override the keys, so the
+new animations hold its strength at 0.
 
 ## Soft bending: hair, tails, cloth, ears
 
