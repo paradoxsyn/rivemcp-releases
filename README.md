@@ -84,6 +84,13 @@ Windows, macOS (Intel and Apple Silicon) and Linux builds — no Node.js needed 
 Previews, GIFs and conversion checks render with Rive's own runtime in a headless Chromium. If a render
 tool reports that Chromium is missing, run `npx playwright install chromium` once.
 
+### Usage counts
+
+Polymation sends counts of which of its tools ran and whether they worked, with its version and how
+it was installed. Nothing about you: no identifier of any kind, and never your files, paths, tool
+settings, prompts or error messages. Details:
+[privacy notice](https://polymation.stunning.gg/privacy.html#usage).
+
 ## Licence
 
 Commercial software — see [LICENSE](LICENSE). A trial allowance is included; a key from
