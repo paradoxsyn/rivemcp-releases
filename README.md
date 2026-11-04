@@ -91,6 +91,11 @@ it was installed. Nothing about you: no identifier of any kind, and never your f
 settings, prompts or error messages. Details:
 [privacy notice](https://polymation.stunning.gg/privacy.html#usage).
 
+With a paid licence key it also sends that key's activity record: per day and tool, how many calls
+worked and wrote a finished file, with the key and device identifier, kept 540 days to answer billing
+questions and payment disputes
+([details](https://polymation.stunning.gg/privacy.html#licenceactivity)). A free trial sends none.
+
 ## Licence
 
 Commercial software — see [LICENSE](LICENSE). A trial allowance is included; a key from
