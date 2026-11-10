@@ -1,0 +1,16 @@
+{
+  "name": "polymation",
+  "description": "Polymation: animation files made and converted by your assistant.",
+  "owner": {
+    "name": "Polymation",
+    "url": "https://polymation.stunning.gg"
+  },
+  "plugins": [
+    {
+      "name": "polymation",
+      "source": "./",
+      "description": "Make and convert animation with your assistant: Rive, Lottie, After Effects, Figma, sprite sheets, rigged characters, Godot and Spine.",
+      "category": "design"
+    }
+  ]
+}

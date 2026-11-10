@@ -56,6 +56,16 @@ would open.
 1. Download **`rivemcp.mcpb`** from the [latest release](https://github.com/paradoxsyn/rivemcp-releases/releases/latest).
 2. Claude Desktop → **Settings** → **Extensions** → **Install from file…** and pick it. No Node.js, no JSON.
 
+### Claude Code — as a plugin
+
+```
+/plugin marketplace add paradoxsyn/rivemcp-releases
+/plugin install polymation@polymation
+```
+
+The plugin adds the server and the eight skills together, and asks for a licence key you can leave
+empty. It needs Node.js 18 or newer.
+
 ### Any MCP client (Claude Code, Cursor, Windsurf, VS Code…)
 
 ```json
@@ -95,6 +105,30 @@ With a paid licence key it also sends that key's activity record: per day and to
 worked and wrote a finished file, with the key and device identifier, kept 540 days to answer billing
 questions and payment disputes
 ([details](https://polymation.stunning.gg/privacy.html#licenceactivity)). A free trial sends none.
+
+## What the plugin runs, fetches and sends
+
+The plugin holds no program of its own: a manifest, an icon and the skills (Markdown). Enabled, it
+starts one local MCP server and nothing else — no hooks, no commands, no background process.
+
+- **Runs:** `npx -y rivemcp@<this version>`, the published npm package pinned to the plugin's own
+  version. The package is a small launcher; installing it downloads the Polymation program for your
+  platform (Windows, macOS, Linux) from this repository's
+  [release of the same version](https://github.com/paradoxsyn/rivemcp-releases/releases) on
+  github.com, and the launcher runs that program. The program is a closed, compiled build.
+- **Reads and writes:** only the files you ask it for, on your own computer. Previews are drawn in a
+  headless Chromium (Playwright's, or Chrome or Edge if installed). No file, path, prompt or tool
+  setting is sent anywhere.
+- **Sends, to `api-rivemcp.stunning.gg` only:** a licence check (your key if you set one, and a
+  device identifier); the count of free exports used by this device when no key is set; counts of
+  which tools ran and whether they worked, with the version and how it was installed, and no
+  identifier; with a paid key, that key's per-day tool counts; and a problem report only when you
+  have read it and agreed to send it.
+
+## Privacy Policy
+
+[polymation.stunning.gg/privacy](https://polymation.stunning.gg/privacy) says what is collected, why,
+for how long, and how to ask for it or have it removed.
 
 ## Licence
 

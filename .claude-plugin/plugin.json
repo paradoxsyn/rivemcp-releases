@@ -1,0 +1,36 @@
+{
+  "name": "polymation",
+  "displayName": "Polymation",
+  "version": "1.25.0",
+  "description": "Make and convert animation with your assistant: Rive files with state machines, Lottie, After Effects, Animate and Figma into Rive, and AI art into rigged characters, sprite sheets and Godot or Spine rigs. Checked in Rive's own runtime.",
+  "author": {
+    "name": "Polymation",
+    "url": "https://polymation.stunning.gg"
+  },
+  "homepage": "https://polymation.stunning.gg",
+  "repository": "https://github.com/paradoxsyn/rivemcp-releases",
+  "keywords": ["animation", "rive", "lottie", "after-effects", "figma", "spine", "godot", "sprite-sheet", "pixel-art", "character-rigging", "game-art"],
+  "icon": "./icon.png",
+  "documentationUrl": "https://polymation.stunning.gg/docs/",
+  "supportUrl": "https://discord.gg/fPEKrZKkSQ",
+  "privacyPolicyUrl": "https://polymation.stunning.gg/privacy",
+  "termsOfServiceUrl": "https://polymation.stunning.gg/terms",
+  "mcpServers": {
+    "polymation": {
+      "command": "npx",
+      "args": ["-y", "rivemcp@1.25.0"],
+      "env": {
+        "POLYMATION_LICENSE_KEY": "${user_config.license_key}",
+        "POLYMATION_CHANNEL": "plugin"
+      }
+    }
+  },
+  "userConfig": {
+    "license_key": {
+      "type": "string",
+      "title": "Licence key (optional)",
+      "description": "Leave empty to start with three free exports. A key from polymation.stunning.gg removes the limit.",
+      "sensitive": true
+    }
+  }
+}
